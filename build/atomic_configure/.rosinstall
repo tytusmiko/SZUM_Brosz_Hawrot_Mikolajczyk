@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/tytus/catkin_ws/devel/setup.sh
