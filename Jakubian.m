@@ -1,4 +1,5 @@
-%% liczonko jakobianka /liczonko modelku manipulatorka
+%% liczonko jakobianka /liczonko modelku manipulatorka 
+
 syms   theta1 theta2 theta3  real
 
 
@@ -46,13 +47,11 @@ A2 = expm(hat(s2)*theta2);
 A3 = expm(hat(s3)*theta3);
 
 
-J = [hat(s1)*p3,   A1*hat(s2)*inv(A1)*p3,   A1*A2*hat(s3)*A3*p30];
+J = [hat(s1)*p3,   A1*hat(s2)*inv(A1)*p3,   A1*A2*hat(s3)*A3*p30];  %Wyrażenie na jakobian policzone analitycznie
 
 
 
 
-
-% p2_dot = J * THETA;
   
 %% całeczka z jakobianeczka
 
@@ -109,7 +108,7 @@ J=[
 [   577621035839997/281474976710656,                                                     (2256944571763519*sin(theta1))/1125899906842624, -2^(1/2)*sin(theta2 + theta3 + pi/4)*sin(theta1)];
 [                                 0, (3270616151937757*sin(theta1))/2251799813685248 - (577621035839997*cos(theta1))/281474976710656 + 1,             -2^(1/2)*cos(theta2 + theta3 + pi/4)];
 [                                 0,                                                                                                   0,                                                0];
-];
+];    %Jakobian uproszczony (simplify(J)) na podstawie J z pierwszej części skryptu (do pojawienia się zmiennych symbolicznych / %% całeczka z jakobianeczka)
 dx= inv(J(1:3,:))*[0;cos(t);-sin(t)];
 end
 
